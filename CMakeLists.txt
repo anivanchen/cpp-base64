@@ -10,6 +10,6 @@ project(
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED_ON)
 
-add_executable(base64 ./src/main.cpp)
+add_executable(base64 ./src/main.cpp ./src/base64.cpp)
 
 target_compile_features(base64 PRIVATE cxx_std_17)
