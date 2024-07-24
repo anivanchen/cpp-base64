@@ -62,17 +62,17 @@ string base64_encode(const vector<char>& data) {
     return encoded;
 }
 
-string base64_decode(const vector<char>& encoded_string) {
+string base64_decode(const vector<char>& data) {
     string decoded;
     int i = 0;
-    int in_len = encoded_string.size();
+    int in_len = data.size();
     int j = 0;
     int index = 0;
 
     unsigned char ca4[4], ca3[3];
 
-    while (in_len-- && (encoded_string[index] != '=') && (isalnum(encoded_string[index]) || (encoded_string[index] == '+') || (encoded_string[index] == '/'))) {
-        ca4[i++] = encoded_string[index]; index++;
+    while (in_len-- && (data[index] != '=') && (isalnum(data[index]) || (data[index] == '+') || (data[index] == '/'))) {
+        ca4[i++] = data[index]; index++;
         if (i == 4) {
             for (i = 0; i < 4; i++)
                 ca4[i] = base64_chars.find(ca4[i]);
